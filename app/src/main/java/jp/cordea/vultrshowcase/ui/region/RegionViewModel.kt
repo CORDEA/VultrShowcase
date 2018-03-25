@@ -1,7 +1,7 @@
-package jp.cordea.vultrshowcase.region
+package jp.cordea.vultrshowcase.ui.region
 
 import io.reactivex.Completable
-import jp.cordea.vultrshowcase.FragmentScope
+import jp.cordea.vultrshowcase.di.FragmentScope
 import javax.inject.Inject
 
 @FragmentScope

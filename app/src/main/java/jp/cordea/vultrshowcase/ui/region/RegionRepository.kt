@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase.region
+package jp.cordea.vultrshowcase.ui.region
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.LiveDataReactiveStreams

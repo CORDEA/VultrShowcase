@@ -1,7 +1,7 @@
-package jp.cordea.vultrshowcase.login
+package jp.cordea.vultrshowcase.ui.login
 
 import android.view.View
-import jp.cordea.vultrshowcase.ActivityScope
+import jp.cordea.vultrshowcase.di.ActivityScope
 import jp.cordea.vultrshowcase.KeyManager
 import javax.inject.Inject
 

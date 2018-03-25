@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase.region
+package jp.cordea.vultrshowcase.ui.region
 
 import com.xwray.groupie.databinding.BindableItem
 import jp.cordea.vultrshowcase.R

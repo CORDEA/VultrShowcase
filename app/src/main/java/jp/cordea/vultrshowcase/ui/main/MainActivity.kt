@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.ui.main
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -13,7 +13,8 @@ import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import jp.cordea.vultrshowcase.region.RegionFragment
+import jp.cordea.vultrshowcase.R
+import jp.cordea.vultrshowcase.ui.region.RegionFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import javax.inject.Inject

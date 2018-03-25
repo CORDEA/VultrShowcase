@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase.login
+package jp.cordea.vultrshowcase.ui.login
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle

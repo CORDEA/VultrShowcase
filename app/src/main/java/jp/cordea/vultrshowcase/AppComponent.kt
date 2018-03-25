@@ -5,6 +5,9 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
+import jp.cordea.vultrshowcase.di.ActivityModule
+import jp.cordea.vultrshowcase.di.AppModule
+import jp.cordea.vultrshowcase.di.StoreModule
 import javax.inject.Singleton
 
 @Singleton

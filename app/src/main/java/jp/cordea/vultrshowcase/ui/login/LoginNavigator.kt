@@ -1,9 +1,9 @@
-package jp.cordea.vultrshowcase.login
+package jp.cordea.vultrshowcase.ui.login
 
 import android.app.Activity
 import android.content.Intent
-import jp.cordea.vultrshowcase.ActivityScope
-import jp.cordea.vultrshowcase.MainActivity
+import jp.cordea.vultrshowcase.di.ActivityScope
+import jp.cordea.vultrshowcase.ui.main.MainActivity
 import javax.inject.Inject
 
 @ActivityScope

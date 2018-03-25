@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase.region
+package jp.cordea.vultrshowcase.ui.region
 
 import jp.cordea.vultrshowcase.api.response.Region
 

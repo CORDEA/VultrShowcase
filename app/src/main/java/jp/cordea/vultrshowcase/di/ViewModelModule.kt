@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.di
 
 import android.arch.lifecycle.ViewModelProvider
 import dagger.Binds
