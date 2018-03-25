@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.region
 
 
 import android.arch.lifecycle.Observer

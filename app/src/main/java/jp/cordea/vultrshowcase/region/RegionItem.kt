@@ -1,6 +1,7 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.region
 
 import com.xwray.groupie.databinding.BindableItem
+import jp.cordea.vultrshowcase.R
 import jp.cordea.vultrshowcase.databinding.ListItemRegionBinding
 import javax.inject.Inject
 
