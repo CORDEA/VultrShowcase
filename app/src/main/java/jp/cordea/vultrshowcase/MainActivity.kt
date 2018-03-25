@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, RegionFragment.newInstance())
+                .commit()
     }
 
     override fun onBackPressed() {
