@@ -6,6 +6,7 @@ import dagger.android.ContributesAndroidInjector
 @Module
 interface MainFragmentsModule {
 
+    @FragmentScope
     @ContributesAndroidInjector
     fun contributeRegionFragment(): RegionFragment
 }
