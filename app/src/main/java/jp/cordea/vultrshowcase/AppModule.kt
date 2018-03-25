@@ -8,7 +8,9 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-@Module(includes = [ViewModelModule::class])
+@Module(includes = [
+    ViewModelModule::class
+])
 class AppModule {
 
     @Provides
