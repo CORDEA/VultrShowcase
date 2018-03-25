@@ -6,6 +6,8 @@ import dagger.android.ContributesAndroidInjector
 @Module
 interface LoginActivityModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [
+        LoginNavigatorModule::class
+    ])
     fun contributeLoginActivity(): LoginActivity
 }

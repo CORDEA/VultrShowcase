@@ -4,7 +4,8 @@ import android.view.View
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(
-        private val keyManager: KeyManager
+        private val keyManager: KeyManager,
+        private val navigator: LoginNavigator
 ) {
     var apiKey: String = ""
 
@@ -13,5 +14,6 @@ class LoginViewModel @Inject constructor(
             return@OnClickListener
         }
         keyManager.set(apiKey)
+        navigator.navigateToMain()
     }
 }
