@@ -1,9 +1,11 @@
 package jp.cordea.vultrshowcase.api
 
 import io.reactivex.Maybe
+import jp.cordea.vultrshowcase.BuildConfig
 import jp.cordea.vultrshowcase.KeyManager
 import jp.cordea.vultrshowcase.api.response.Regions
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -17,13 +19,21 @@ class VultrApiClient @Inject constructor(
     private val service: Maybe<VultrApi>
         get() {
             val key = manager.get() ?: return Maybe.empty()
-            val builder = OkHttpClient.Builder()
+            var builder = OkHttpClient.Builder()
                     .addInterceptor {
                         it.proceed(it.request()
                                 .newBuilder()
                                 .addHeader("API-Key", key)
                                 .build())
                     }
+
+            if (BuildConfig.DEBUG) {
+                builder = builder
+                        .addInterceptor(
+                                HttpLoggingInterceptor()
+                                        .setLevel(HttpLoggingInterceptor.Level.BASIC)
+                        )
+            }
 
             return Maybe.just(retrofitBuilder
                     .client(builder.build())
