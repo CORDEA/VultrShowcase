@@ -68,5 +68,6 @@ class RegionFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         viewModel.fetchRegion()
+                .subscribe({}, {})
     }
 }
