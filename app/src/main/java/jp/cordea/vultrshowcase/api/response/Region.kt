@@ -2,10 +2,6 @@ package jp.cordea.vultrshowcase.api.response
 
 import com.squareup.moshi.Json
 
-data class Regions(
-        val regions: Map<String, Region>
-)
-
 data class Region(
         @Json(name = "DCID") val id: Int,
         val name: String,

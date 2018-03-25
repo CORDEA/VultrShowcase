@@ -3,7 +3,7 @@ package jp.cordea.vultrshowcase.api
 import io.reactivex.Maybe
 import jp.cordea.vultrshowcase.BuildConfig
 import jp.cordea.vultrshowcase.KeyManager
-import jp.cordea.vultrshowcase.api.response.Regions
+import jp.cordea.vultrshowcase.api.response.Region
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -41,6 +41,6 @@ class VultrApiClient @Inject constructor(
                     .create(VultrApi::class.java))
         }
 
-    override fun getRegions(): Maybe<Regions> =
+    override fun getRegions(): Maybe<Map<String, Region>> =
             service.flatMap { it.getRegions() }
 }

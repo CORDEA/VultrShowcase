@@ -2,6 +2,8 @@ package jp.cordea.vultrshowcase
 
 import android.app.Application
 import android.content.Context
+import com.squareup.moshi.KotlinJsonAdapterFactory
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -18,9 +20,15 @@ class AppModule {
             application.applicationContext
 
     @Provides
-    fun provideRetrofitBuilder(): Retrofit.Builder =
+    fun provideMoshi(): Moshi =
+            Moshi.Builder()
+                    .add(KotlinJsonAdapterFactory())
+                    .build()
+
+    @Provides
+    fun provideRetrofitBuilder(moshi: Moshi): Retrofit.Builder =
             Retrofit.Builder()
                     .baseUrl(BuildConfig.API_BASE_URL)
-                    .addConverterFactory(MoshiConverterFactory.create())
+                    .addConverterFactory(MoshiConverterFactory.create(moshi))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 }

@@ -23,7 +23,7 @@ class RegionRepository @Inject constructor(
 
     fun fetchRegion(): Completable =
             apiClient.getRegions()
-                    .map { it.regions.values.toList() }
+                    .map { it.values.toList() }
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnSuccess { regions.onNext(it) }
