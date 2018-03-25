@@ -1,7 +1,8 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.login
 
 import android.app.Activity
 import android.content.Intent
+import jp.cordea.vultrshowcase.MainActivity
 import javax.inject.Inject
 
 class LoginNavigator @Inject constructor(

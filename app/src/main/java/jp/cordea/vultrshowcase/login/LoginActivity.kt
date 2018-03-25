@@ -1,9 +1,10 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.login
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
+import jp.cordea.vultrshowcase.R
 import jp.cordea.vultrshowcase.databinding.ActivityLoginBinding
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject

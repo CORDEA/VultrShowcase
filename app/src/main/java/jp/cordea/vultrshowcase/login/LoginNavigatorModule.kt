@@ -1,4 +1,4 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.login
 
 import android.app.Activity
 import dagger.Binds

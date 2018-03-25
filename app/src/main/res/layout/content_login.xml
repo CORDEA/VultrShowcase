@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="jp.cordea.vultrshowcase.LoginViewModel" />
+            type="jp.cordea.vultrshowcase.login.LoginViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:padding="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="jp.cordea.vultrshowcase.LoginActivity"
+        tools:context="jp.cordea.vultrshowcase.login.LoginActivity"
         tools:showIn="@layout/activity_login">
 
         <android.support.design.widget.TextInputLayout

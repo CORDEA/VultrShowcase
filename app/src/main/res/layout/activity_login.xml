@@ -6,13 +6,13 @@
     <data>
         <variable
             name="vm"
-            type="jp.cordea.vultrshowcase.LoginViewModel"/>
+            type="jp.cordea.vultrshowcase.login.LoginViewModel"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="jp.cordea.vultrshowcase.LoginActivity">
+        tools:context="jp.cordea.vultrshowcase.login.LoginActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"

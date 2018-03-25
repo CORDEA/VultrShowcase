@@ -1,6 +1,7 @@
-package jp.cordea.vultrshowcase
+package jp.cordea.vultrshowcase.login
 
 import android.view.View
+import jp.cordea.vultrshowcase.KeyManager
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(
