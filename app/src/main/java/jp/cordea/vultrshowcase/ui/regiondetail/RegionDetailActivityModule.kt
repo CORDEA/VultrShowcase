@@ -8,6 +8,9 @@ import jp.cordea.vultrshowcase.di.ActivityScope
 interface RegionDetailActivityModule {
 
     @ActivityScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [
+        RegionDetailAdapterModule::class,
+        RegionDetailBindModule::class
+    ])
     fun contributeRegionDetailActivity(): RegionDetailActivity
 }

@@ -1,13 +1,11 @@
 package jp.cordea.vultrshowcase.ui.regiondetail
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import jp.cordea.vultrshowcase.R
-import jp.cordea.vultrshowcase.ui.region.RegionStore
 import kotlinx.android.synthetic.main.activity_region_detail.*
 import javax.inject.Inject
 
@@ -27,20 +25,13 @@ class RegionDetailActivity : AppCompatActivity() {
     lateinit var viewModel: RegionDetailViewModel
 
     @Inject
-    lateinit var store: RegionStore
+    lateinit var adapter: RegionDetailFragmentPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_region_detail)
         setSupportActionBar(toolbar)
-
-        store.regions()
-                .observe(this, Observer {
-                    it?.let {
-
-                    }
-                })
 
         viewModel.fetchRegion()
                 .subscribe({}, {})

@@ -1,7 +1,12 @@
 package jp.cordea.vultrshowcase.api.response
 
+import android.annotation.SuppressLint
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
+@SuppressLint("ParcelCreator")
 data class Region(
         @Json(name = "DCID") val id: Int,
         val name: String,
@@ -11,4 +16,4 @@ data class Region(
         @Json(name = "ddos_protection") val ddosProtection: Boolean,
         @Json(name = "block_storage") val blockStorage: Boolean,
         @Json(name = "regioncode") val regionCode: String
-)
+) : Parcelable
