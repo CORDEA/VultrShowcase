@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="jp.cordea.vultrshowcase.login.LoginViewModel"/>
+            type="jp.cordea.vultrshowcase.ui.login.LoginViewModel"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout

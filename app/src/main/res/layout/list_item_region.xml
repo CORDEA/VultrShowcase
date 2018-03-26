@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="jp.cordea.vultrshowcase.region.RegionItemViewModel" />
+            type="jp.cordea.vultrshowcase.ui.region.RegionItemViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
