@@ -6,6 +6,7 @@ import jp.cordea.vultrshowcase.databinding.ListItemRegionBinding
 import javax.inject.Inject
 
 class RegionItem @Inject constructor(
+        private val navigator: RegionNavigator
 ) : BindableItem<ListItemRegionBinding>() {
 
     private lateinit var viewModel: RegionItemViewModel
@@ -19,5 +20,8 @@ class RegionItem @Inject constructor(
 
     override fun bind(viewBinding: ListItemRegionBinding, position: Int) {
         viewBinding.vm = viewModel
+        viewBinding.root.setOnClickListener {
+            navigator.navigateToDetail(position)
+        }
     }
 }
