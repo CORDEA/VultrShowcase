@@ -6,14 +6,14 @@ import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.processors.PublishProcessor
 import io.reactivex.schedulers.Schedulers
-import jp.cordea.vultrshowcase.api.VultrApiClient
 import jp.cordea.vultrshowcase.api.response.Region
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class RegionRepository @Inject constructor(
-        private val apiClient: VultrApiClient
+        private val dataSource: RegionDataSource,
+        private val localDataSource: RegionLocalDataSource
 ) : RegionStore {
 
     private val regions = PublishProcessor.create<List<Region>>()
@@ -21,9 +21,16 @@ class RegionRepository @Inject constructor(
     override fun regions(): LiveData<List<Region>> =
             LiveDataReactiveStreams.fromPublisher(regions)
 
-    fun fetchRegion(): Completable =
-            apiClient.getRegions()
-                    .map { it.values.toList() }
+    fun fetchRegion(forceFetch: Boolean): Completable =
+            if (forceFetch) {
+                dataSource.fetchRegion()
+            } else {
+                localDataSource.fetchRegion()
+                        .switchIfEmpty(
+                                dataSource.fetchRegion()
+                                        .doOnSuccess { localDataSource.cacheRegion(it) }
+                        )
+            }
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnSuccess { regions.onNext(it) }

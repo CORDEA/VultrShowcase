@@ -7,6 +7,7 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import jp.cordea.vultrshowcase.di.ActivityModule
 import jp.cordea.vultrshowcase.di.AppModule
+import jp.cordea.vultrshowcase.di.DataSourceModule
 import jp.cordea.vultrshowcase.di.StoreModule
 import javax.inject.Singleton
 
@@ -15,6 +16,7 @@ import javax.inject.Singleton
     AndroidSupportInjectionModule::class,
     AppModule::class,
     StoreModule::class,
+    DataSourceModule::class,
     ActivityModule::class
 ])
 interface AppComponent : AndroidInjector<App> {

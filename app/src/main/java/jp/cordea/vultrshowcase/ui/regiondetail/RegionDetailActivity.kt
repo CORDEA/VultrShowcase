@@ -1,13 +1,15 @@
 package jp.cordea.vultrshowcase.ui.regiondetail
 
+import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import jp.cordea.vultrshowcase.R
+import jp.cordea.vultrshowcase.ui.region.RegionStore
 import kotlinx.android.synthetic.main.activity_region_detail.*
+import javax.inject.Inject
 
 class RegionDetailActivity : AppCompatActivity() {
 
@@ -21,16 +23,26 @@ class RegionDetailActivity : AppCompatActivity() {
                 }
     }
 
+    @Inject
+    lateinit var viewModel: RegionDetailViewModel
+
+    @Inject
+    lateinit var store: RegionStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_region_detail)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-    }
+        store.regions()
+                .observe(this, Observer {
+                    it?.let {
 
+                    }
+                })
+
+        viewModel.fetchRegion()
+                .subscribe({}, {})
+    }
 }

@@ -65,8 +65,9 @@ class RegionFragment : Fragment() {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel.fetchRegion()
                 .subscribe({}, {})
     }

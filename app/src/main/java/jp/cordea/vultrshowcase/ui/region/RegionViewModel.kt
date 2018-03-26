@@ -10,5 +10,5 @@ class RegionViewModel @Inject constructor(
 ) {
 
     fun fetchRegion(): Completable =
-            repository.fetchRegion()
+            repository.fetchRegion(false)
 }
