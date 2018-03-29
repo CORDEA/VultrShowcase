@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import jp.cordea.vultrshowcase.R
+import jp.cordea.vultrshowcase.observe
 import kotlinx.android.synthetic.main.activity_region_detail.*
 import javax.inject.Inject
 
@@ -33,7 +34,6 @@ class RegionDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_region_detail)
         setSupportActionBar(toolbar)
 
-        viewModel.fetchRegion()
-                .subscribe({}, {})
+        viewModel.fetchRegion().observe(this)
     }
 }

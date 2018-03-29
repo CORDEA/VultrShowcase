@@ -1,6 +1,7 @@
 package jp.cordea.vultrshowcase.ui.region
 
-import io.reactivex.Completable
+import android.arch.lifecycle.LiveData
+import jp.cordea.vultrshowcase.CompletableLiveData
 import jp.cordea.vultrshowcase.di.FragmentScope
 import javax.inject.Inject
 
@@ -9,6 +10,6 @@ class RegionViewModel @Inject constructor(
         private val repository: RegionRepository
 ) {
 
-    fun fetchRegion(): Completable =
-            repository.fetchRegion(false)
+    fun fetchRegion(): LiveData<Unit> =
+            CompletableLiveData.fromCompletable(repository.fetchRegion(false))
 }
